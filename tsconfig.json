@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "es5",
+    "module": "commonjs",
+    "jsx": "react",
+    "rootDir": "./",
+    "removeComments": true,
+    "noEmit": true,
+    "downlevelIteration": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "paths": {},
+    "rootDirs": [],
+    "esModuleInterop": true
+  },
+  "include": [
+    "src"
+  ]
+}
