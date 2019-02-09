@@ -18,6 +18,7 @@
     "baseUrl": "./src",
     "paths": {},
     "rootDirs": [],
+    "importHelpers": true,
     "esModuleInterop": true
   },
   "include": [

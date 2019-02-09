@@ -34,6 +34,19 @@ module.exports = {
       }
     ]
   },
+  optimization: {
+    usedExports: true,
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          filename: "[name].bundle.js",
+          chunks: 'all'
+        }
+      }
+    }
+  },
   plugins: [
     new HtmlWebpackPlugin(),
     new CheckerPlugin(),
