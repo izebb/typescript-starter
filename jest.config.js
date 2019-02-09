@@ -16,5 +16,5 @@ module.exports = {
     "json",
     "node"
   ],
-  "setupFilesAfterEnv": ["<rootDir>/testSetup.ts"]
+  "setupTestFrameworkScriptFile": "<rootDir>/testSetup.ts"
 }
