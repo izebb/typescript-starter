@@ -14,11 +14,15 @@
     "typescript": "^3.2.4"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.9.0",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
     "@typescript-eslint/eslint-plugin": "^1.4.0",
     "@typescript-eslint/parser": "^1.4.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-plugin-styled-components": "^1.10.0",
     "clean-webpack-plugin": "^1.0.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.9.1",
     "eslint": "^5.14.1",
     "eslint-config-prettier": "^4.0.0",
     "eslint-loader": "^2.1.2",
