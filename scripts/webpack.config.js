@@ -1,17 +1,21 @@
 /*eslint-disable*/
-const path  = require('path');
-const { CheckerPlugin } = require('awesome-typescript-loader');
+const path = require('path');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CheckerPlugin } = require('awesome-typescript-loader');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const cwd = process.cwd();
+const OUTPUT_PATH = path.resolve(cwd, './dist');
+const ENTRY_FILES = './src/index.tsx';
+const PUBLIC_PATH = '/';
 
 module.exports = {
-  entry: './src/index.tsx',
+  entry: ENTRY_FILES,
   output: {
-    path: path.resolve(cwd, './dist'),
+    path: OUTPUT_PATH,
     filename: '[name].[hash].js',
-    publicPath: '/',
+    publicPath: PUBLIC_PATH
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx']
@@ -20,17 +24,18 @@ module.exports = {
   module: {
     rules: [
       {
-        enforce: "pre",
+        enforce: 'pre',
         test: /\.tsx?$/,
         exclude: /node_modules/,
-        loader: "eslint-loader",
+        loader: 'eslint-loader',
+        options: {
+          emitError: true,
+          failOnError: true
+        }
       },
       {
         test: /\.tsx?$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
+        loader: 'awesome-typescript-loader'
       }
     ]
   },
@@ -41,7 +46,7 @@ module.exports = {
         commons: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          filename: "[name].bundle.js",
+          filename: '[name].bundle.js',
           chunks: 'all'
         }
       }
@@ -50,6 +55,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin(),
     new CheckerPlugin(),
-    new CleanWebpackPlugin([path.resolve(cwd, 'dist')])
+    new CleanWebpackPlugin([OUTPUT_PATH], {
+      root: cwd
+    })
   ]
 };

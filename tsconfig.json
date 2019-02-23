@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     /* Basic Options */
-    "target": "es5",
+    "target": "es6",
     "module": "commonjs",
     "jsx": "react",
     "rootDir": "./",
@@ -19,9 +19,8 @@
     "paths": {},
     "rootDirs": [],
     "importHelpers": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "skipLibCheck": true
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

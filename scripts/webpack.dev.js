@@ -1,18 +1,20 @@
 /*eslint-disable*/
-const merge = require('webpack-merge')
-const webpack = require('webpack')
-const base = require("./webpack.config")
+const merge = require('webpack-merge');
+const webpack = require('webpack');
+const base = require('./webpack.config');
 
 module.exports = merge(base, {
-  mode: "production",
+  mode: 'production',
   optimization: {
     minimize: true
+  },
+  performance: {
+    maxAssetSize: 400000,
+    maxEntrypointSize: 400000
   },
   devServer: {
     hot: true,
     port: 3000
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ]
-})
+  plugins: [new webpack.HotModuleReplacementPlugin()]
+});
