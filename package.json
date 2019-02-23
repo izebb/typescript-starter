@@ -34,7 +34,7 @@
     "webpack-merge": "^4.2.1"
   },
   "scripts": {
-    "fix": "eslint --fix",
+    "fix": "eslint --fix src/**",
     "start": "webpack-dev-server --config ./scripts/webpack.dev.js",
     "build": "webpack ---config ./scripts/webpack.prod.js"
   },
