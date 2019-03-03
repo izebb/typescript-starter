@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const base = require('./webpack.config');
 
 module.exports = merge(base, {
-  mode: 'production',
+  mode: 'development',
   optimization: {
     minimize: true
   },
